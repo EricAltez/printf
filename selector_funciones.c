@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -9,7 +10,7 @@
 *Return: Direccion de la funcion.
 */
 
-int (*selector_funciones(char o))(va_list f)
+int (*selector_funciones(char *o))(va_list f)
 {
 	estructura1 selectorf[] = {
 		{"c", print_char},
