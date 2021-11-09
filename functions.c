@@ -8,12 +8,13 @@
  */
 int print_char(va_list lista)
 {
+	int cuenta = 0;
 	int ch;
 
 	ch = va_arg(lista, int);
-
 	_putchar(ch);
-	return (_putchar(ch));
+	cuenta++;
+	return (cuenta);
 }
 /**
  * print_string - Funcion que imprime strig.
