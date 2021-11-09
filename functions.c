@@ -44,10 +44,9 @@ int print_string(va_list lista)
  */
 int conv_dig(int i)
 {
-	int aux = 0;
+	unsigned int aux = 0;
 	int cuenta = 0;
 
-	i = 0;
 	if (i < 0)
 	{
 		_putchar('-');

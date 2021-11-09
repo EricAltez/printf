@@ -24,15 +24,16 @@ int _printf(const char *format, ...)
 			if (format[pos + 1] == '%')
 			{
 				_putchar('%');
-				pos++;
-				conteo++;
+				pos += 2, conteo++;
 				continue;
 			}
 			else
 			{
 				fun = selector_funciones(format[pos + 1]);
 				if (fun)
-					conteo += fun(lista);
+				{
+					conteo += fun(lista), pos++;
+				}
 				else
 				{
 					_putchar(format[pos + 1]);
