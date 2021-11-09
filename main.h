@@ -20,7 +20,7 @@ typedef struct estructura1
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int _putchar(char c);
-int (*selector_funciones(char *o))(va_list f);
+int (*selector_funciones(char o))(va_list f);
 int print_char(va_list lista);
 int print_string(va_list lista);
 int conv_dig(int i);

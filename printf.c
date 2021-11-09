@@ -44,9 +44,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[pos]);
 			conteo++;
-			pos++;
 		}
 	}
 	va_end(lista);
-	return (0);
+	return (conteo);
 }

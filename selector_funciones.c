@@ -10,7 +10,7 @@
 *Return: Direccion de la funcion.
 */
 
-int (*selector_funciones(char *o))(va_list f)
+int (*selector_funciones(char o))(va_list f)
 {
 	estructura1 selectorf[] = {
 		{"c", print_char},
@@ -23,7 +23,7 @@ int (*selector_funciones(char *o))(va_list f)
 
 	while (selectorf[i].o)
 	{
-		if (o == selectorf[i].o)
+		if (o == selectorf[i].o[0])
 		{
 			return (selectorf[i].f);
 		}
