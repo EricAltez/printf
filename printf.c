@@ -23,8 +23,8 @@ int _printf(const char *format, ...)
 				return (-1);
 			if (format[pos + 1] == '%')
 			{
-				_putchar('%');
-				pos += 2, conteo++;
+				_putchar(format[pos + 1]);
+				pos += 1, conteo++;
 				continue;
 			}
 			else
