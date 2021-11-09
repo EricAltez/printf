@@ -1,50 +1,78 @@
 #include "main.h"
-#include <string.h>
+#include <stdarg.h>
 #include <unistd.h>
 /**
- * print_char - Function that prints characters.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
+ * print_char - Funcion que imprime caracter.
+ * @lista: lista de argumentos
+ * Return: numero de caracteres impresos
  */
-int print_char(va_list arguments_list)
+int print_char(va_list lista)
 {
-	int str = va_arg(arguments_list, int);
+	int ch;
 
-	_putchar(str);
-	return (1);
+	ch = va_arg(lista, int);
+
+	_putchar(ch);
+	return (_putchar(ch));
 }
 /**
- * print_string - Function that prints strings.
- * @arguments_list: Variable argument list.
- * Return: Always 0.
+ * print_string - Funcion que imprime strig.
+ * @lista: lista de argumentos
+ * Return: numero de caracteres impresos
  */
-int print_string(va_list arguments_list)
+int print_string(va_list lista)
 {
-	int i;
-	char *str = va_arg(arguments_list, char *);
-	char *strNULL = "(null)";
+	int i = 0;
+	int cuenta = 0;
+	char *p;
 
-	if (str == NULL)
-		for (i = 0; strNULL[i] != '\0'; i++)
-			_putchar(strNULL[i]);
-	else
+	p = va_arg(lista, char*);
+	if (!p)
+		p = "(null)";
+	while (p[i] != '\0')
 	{
-		for (i = 0; str[i] != 0; i++)
-			_putchar(str[i]);
+		_putchar(p[i]);
+		i++;
+		cuenta++;
 	}
-	return (i);
+	return (cuenta);
 }
 /**
- *
- *
- *
- *
+ *conv_dig - convierte de ASCII a int
+ *@i: digito a convertir
+ *Return: numero de digitos impresos.
  */
+int conv_dig(int i)
+{
+	int aux = 0;
+	int cuenta = 0;
 
+	i = 0;
+	if (i < 0)
+	{
+		_putchar('-');
+		cuenta++;
+		aux = -i;
+	}
+	else
+		aux = i;
+
+	if (aux / 10)
+	{
+		cuenta += conv_dig(aux / 10);
+	}
+	_putchar((aux % 10) + '0');
+	cuenta++;
+	return (cuenta);
+}
 /**
- *
- *
- *
- *
+ *print_digit - imprime digitos
+ *@lista: lista de argumentos
+ *Return: digitos impresos
  */
+int print_digit(va_list lista)
+{
+	int i = va_arg(lista, int);
 
+	return (conv_dig(i));
+}
