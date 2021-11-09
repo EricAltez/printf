@@ -36,8 +36,9 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
+					_putchar(format[pos]);
 					_putchar(format[pos + 1]);
-					pos++, conteo++;
+					pos++, conteo += 2;
 				}
 			}
 		}
