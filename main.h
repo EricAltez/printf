@@ -5,14 +5,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct prt
+/**
+ *estructura1 - usada para definir formato
+ *@o: operador
+ *@f: lista de funciones asociadas
+ */
+
+typedef struct estructura1
 {
-	char por;
-	int (*fun)(va_list argumentos);
-}prt;
+	char o;
+	int (*f)(va_list argumentos);
+}estructura1;
 
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int _putchar(char c);
+int (*selector_funciones(char o))(va_list f);
 
 #endif
