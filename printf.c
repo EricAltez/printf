@@ -31,9 +31,7 @@ int _printf(const char *format, ...)
 			{
 				fun = selector_funciones(format[pos + 1]);
 				if (fun)
-				{
 					conteo += fun(lista), pos++;
-				}
 				else
 				{
 					_putchar(format[pos]);
